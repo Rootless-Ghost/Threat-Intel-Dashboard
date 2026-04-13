@@ -114,6 +114,21 @@ The dashboard calculates a composite risk score (0-100):
 | 61-80 | High | Multiple malicious indicators |
 | 81-100 | Critical | Confirmed malicious |
 
+## Integration with Nebula Forge
+
+Threat Intel Dashboard occupies the **Detect** phase of the Nebula Forge pipeline as the IOC enrichment source upstream of all rule generation.
+
+### Threat Intel Dashboard → detection-pipeline
+
+detection-pipeline queries the Threat Intel Dashboard to enrich IOCs against VirusTotal and AbuseIPDB before generating detection rules. When an IOC's composite risk score crosses the configured threshold, detection-pipeline fans out simultaneously to SigmaForge, YaraForge, and SnortForge — producing Sigma, YARA, and Snort rules in a single automated pass without analyst intervention.
+
+detection-pipeline targets the Threat Intel Dashboard at the URL configured in its `config.yaml`:
+
+```yaml
+threat_intel_url: "http://127.0.0.1:5000"
+```
+
+
 ## Roadmap
 
 - [x] Project setup
