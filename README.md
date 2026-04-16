@@ -145,9 +145,9 @@ threat_intel_url: "http://127.0.0.1:5000"
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) for details
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
---- 
+
 <div align="center">
 
 Built by [Rootless-Ghost](https://github.com/Rootless-Ghost) 
