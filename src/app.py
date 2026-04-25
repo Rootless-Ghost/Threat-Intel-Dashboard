@@ -9,12 +9,20 @@ from flask import Flask, render_template, request, jsonify
 from threat_intel import ThreatIntelLookup
 import os
 
-app = Flask(__name__, 
+app = Flask(__name__,
             template_folder='../templates',
             static_folder='../static')
 
 # Initialize the lookup engine
 lookup_engine = ThreatIntelLookup('../config.yaml')
+
+
+@app.after_request
+def _set_security_headers(response):
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    return response
 
 
 @app.route('/')
