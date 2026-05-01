@@ -38,6 +38,15 @@ cd threat-intel-dashboard
 pip install -r requirements.txt
 ```
 
+### Docker (standalone)
+
+```bash
+docker build -t threat-intel-dashboard .
+docker run -e PORT=5002 -p 5002:5002 threat-intel-dashboard
+```
+
+Open http://localhost:5002
+
 ## Configuration
 
 Create a `config.yaml` file with your API keys (free tiers available):
