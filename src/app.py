@@ -8,13 +8,15 @@ Description: Flask-based web dashboard for threat intelligence lookups.
 from flask import Flask, render_template, request, jsonify
 from threat_intel import ThreatIntelLookup
 import os
+from pathlib import Path
 
 app = Flask(__name__,
             template_folder='../templates',
             static_folder='../static')
 
 # Initialize the lookup engine
-lookup_engine = ThreatIntelLookup('../config.yaml')
+_CONFIG_PATH = Path(__file__).parent.parent / 'config.yaml'
+lookup_engine = ThreatIntelLookup(str(_CONFIG_PATH))
 
 
 @app.after_request

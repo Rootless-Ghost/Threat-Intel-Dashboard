@@ -10,6 +10,7 @@ import sys
 import re
 import json
 import hashlib
+import os
 from pathlib import Path
 from datetime import datetime
 
@@ -35,7 +36,7 @@ class ThreatIntelLookup:
         self.load_config(config_path)
     
     def load_config(self, config_path: str):
-        """Load API keys from config file."""
+        """Load API keys from config file, then override with env vars."""
         if YAML_AVAILABLE and Path(config_path).exists():
             try:
                 with open(config_path, 'r') as f:
@@ -44,6 +45,13 @@ class ThreatIntelLookup:
                         self.api_keys = config.get('api_keys', {})
             except Exception:
                 pass
+        # Env vars take precedence over config file values
+        for key, env_var in [('virustotal', 'VT_API_KEY'),
+                              ('abuseipdb', 'ABUSEIPDB_API_KEY'),
+                              ('alienvault', 'ALIENVAULT_API_KEY')]:
+            val = os.environ.get(env_var)
+            if val:
+                self.api_keys[key] = val
     
     def validate_ioc(self, ioc: str, ioc_type: str) -> bool:
         """Validate IOC format."""
