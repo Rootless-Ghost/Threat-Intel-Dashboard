@@ -33,7 +33,7 @@ A Python-based threat intelligence tool that aggregates IOCs from multiple sourc
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/threat-intel-dashboard.git
+git clone https://github.com/Rootless-Ghost/Threat-Intel-Dashboard.git
 cd threat-intel-dashboard
 pip install -r requirements.txt
 ```
