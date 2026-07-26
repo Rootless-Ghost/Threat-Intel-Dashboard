@@ -13,7 +13,7 @@ A Python-based threat intelligence tool that aggregates IOCs from multiple sourc
 ## Features
 
 - **IOC Lookup**: Check IPs, domains, and file hashes against threat intelligence sources
-- **Multi-Source Aggregation**: Pulls from VirusTotal, AbuseIPDB, and AlienVault OTX
+- **Multi-Source Aggregation**: Pulls from VirusTotal and AbuseIPDB (AlienVault OTX is planned — see Roadmap; no `query_alienvault()` implementation or demo-mode data exists yet)
 - **Reputation Scoring**: Calculates risk scores based on multiple data points
 - **Web Dashboard**: Clean Flask-based interface for easy interaction
 - **CLI Mode**: Command-line interface for quick lookups and scripting
@@ -106,9 +106,9 @@ threat-intel-dashboard/
 
 | Type | Description | Sources Checked |
 |------|-------------|-----------------|
-| IP Address | IPv4/IPv6 addresses | VirusTotal, AbuseIPDB, AlienVault |
-| Domain | Domain names | VirusTotal, AlienVault |
-| Hash | MD5, SHA1, SHA256 | VirusTotal, AlienVault |
+| IP Address | IPv4/IPv6 addresses | VirusTotal, AbuseIPDB |
+| Domain | Domain names | VirusTotal |
+| Hash | MD5, SHA1, SHA256 | VirusTotal |
 | URL | Full URLs | VirusTotal |
 
 ## Risk Scoring
