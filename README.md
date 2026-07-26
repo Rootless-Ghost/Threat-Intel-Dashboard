@@ -61,7 +61,6 @@ api_keys:
 Get free API keys:
 - [VirusTotal](https://www.virustotal.com/gui/join-us) - 4 requests/min free
 - [AbuseIPDB](https://www.abuseipdb.com/register) - 1000 checks/day free
-- [AlienVault OTX](https://otx.alienvault.com/) - Free unlimited
 
 ## Usage
 
@@ -146,7 +145,7 @@ threat_intel_url: "http://127.0.0.1:5000"
 - [x] AbuseIPDB integration  
 - [x] Risk scoring
 - [x] Web dashboard
-- [ ] AlienVault OTX integration
+- [ ] AlienVault OTX integration — [get a free API key](https://otx.alienvault.com/) (free, unlimited) once implemented; no code path uses it yet
 - [ ] Bulk IOC import (CSV)
 - [ ] Historical lookup caching
 - [ ] MITRE ATT&CK mapping
