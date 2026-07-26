@@ -34,7 +34,7 @@ A Python-based threat intelligence tool that aggregates IOCs from multiple sourc
 
 ```bash
 git clone https://github.com/Rootless-Ghost/Threat-Intel-Dashboard.git
-cd threat-intel-dashboard
+cd Threat-Intel-Dashboard
 pip install -r requirements.txt
 ```
 
